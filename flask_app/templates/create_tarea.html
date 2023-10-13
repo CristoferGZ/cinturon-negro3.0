@@ -4,36 +4,46 @@
     <meta charset="UTF-8">
     <title>Gestión de Tareas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card-container {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3498db;">
-
-        <a class="btn btn-danger" href="/logout" style="color: #fff;">Cerrar Sesión</a>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom"> <!-- Aplicar la clase de estilo personalizado a la barra de navegación -->
+        <a class="btn btn-danger" href="/dashboard">Volver al Inicio</a>
+        <a class="btn btn-danger" href="/logout">Cerrar Sesión</a>
     </nav>
 
     <div class="container mt-4">
-        <!-- Formulario de ingreso de tareas -->
-        <h2 style="color: #3498db;">Registrar Tarea</h2>
-        <form action="/post_appointment" method="post">
-            <div class="form-group">
-                <label for="nombreTarea">Nombre de la Tarea</label>
-                <input type="text" name="nombreTarea" class="form-control" id="nombreTarea" placeholder="Escribe el nombre de la tarea">
+        <!-- Tarjeta con formulario de ingreso de tareas -->
+        <div class="card card-container">
+            <div class="card-body">
+                <h2 class="card-title" style="color: #3498db;">Registrar Tarea</h2>
+                <form action="/post_appointment" method="post">
+                    <div class="form-group">
+                        <label for="nombreTarea">Nombre de la Tarea</label>
+                        <input type="text" name="nombreTarea" class="form-control" id="nombreTarea" placeholder="Escribe el nombre de la tarea">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaTarea">Fecha de la Tarea</label>
+                        <input type="date" name="fechaTarea" class="form-control" id="fechaTarea">
+                    </div>
+                    <div class="form-group">
+                        <label for="estadoTarea">Estado de la Tarea</label>
+                        <select class="form-control" name="estadoTarea" id="estadoTarea">
+                            <option>incompleta</option>
+                            <option>Completada</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="background-color: #3498db;">Guardar Tarea</button>
+                    <a href="/dashboard" class="btn btn-primary" style="background-color: #3498db; color: aliceblue;">Volver</a>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="fechaTarea">Fecha de la Tarea</label>
-                <input type="date" name="fechaTarea" class="form-control" id="fechaTarea">
-            </div>
-            <div class="form-group">
-                <label for="estadoTarea">Estado de la Tarea</label>
-                <select class="form-control" name="estadoTarea" id="estadoTarea">
-                    <option>incompleta</option>
-                    <option>Completada</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary" style="background-color: #3498db;">Guardar Tarea</button>
-            <button class="btn btn-primary" style="background-color: #3498db;"><a href="/dashboard" style="color: aliceblue;">Volver</a></button>
-        </form>
+        </div>
     </div>
 
     <!-- Scripts de Bootstrap y jQuery -->

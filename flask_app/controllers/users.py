@@ -62,8 +62,3 @@ def logout():
     session.clear()
     return redirect('/')
 
-# @app.route('/logout')
-# def logout():
-#     # Eliminar la información de sesión del usuario
-#     session.pop('user_id', None)  # Ajusta la clave de sesión que uses para almacenar la información del usuario
-#     return redirect(url_for('login'))  # Redirige al usuario a la página de inicio de sesión o a donde quieras
