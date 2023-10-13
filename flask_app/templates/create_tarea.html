@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3498db;">
+
+        <a class="btn btn-danger" href="/logout" style="color: #fff;">Cerrar Sesión</a>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Formulario de ingreso de tareas -->
+        <h2 style="color: #3498db;">Registrar Tarea</h2>
+        <form action="/post_appointment" method="post">
+            <div class="form-group">
+                <label for="nombreTarea">Nombre de la Tarea</label>
+                <input type="text" name="nombreTarea" class="form-control" id="nombreTarea" placeholder="Escribe el nombre de la tarea">
+            </div>
+            <div class="form-group">
+                <label for="fechaTarea">Fecha de la Tarea</label>
+                <input type="date" name="fechaTarea" class="form-control" id="fechaTarea">
+            </div>
+            <div class="form-group">
+                <label for="estadoTarea">Estado de la Tarea</label>
+                <select class="form-control" name="estadoTarea" id="estadoTarea">
+                    <option>incompleta</option>
+                    <option>Completada</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="background-color: #3498db;">Guardar Tarea</button>
+            <button class="btn btn-primary" style="background-color: #3498db;"><a href="/dashboard" style="color: aliceblue;">Volver</a></button>
+        </form>
+    </div>
+
+    <!-- Scripts de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
